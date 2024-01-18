@@ -60,10 +60,10 @@ if(bmiMarkRounded>bmiJohnRounded){
 // const scoreKoalas = (109 + 95 + 123) / 3;
 
 //data#3
-const scoreDolphins = (97 + 112 + 101) / 3;
-const scoreKoalas = (109 + 95 + 106) / 3;
-
-console.log(scoreDolphins, scoreKoalas);
+// const scoreDolphins = (97 + 112 + 101) / 3;
+// const scoreKoalas = (109 + 95 + 106) / 3;
+//
+// console.log(scoreDolphins, scoreKoalas);
 
 // if (scoreDolphins > scoreKoalas){
 //     console.log("Dolphins win the trophy");
@@ -73,14 +73,17 @@ console.log(scoreDolphins, scoreKoalas);
 //     console.log("Both win the trophy");
 // }
 
-const minimalScore = 100;
+// const minimalScore = 100;
+//
+// if(scoreDolphins > scoreKoalas && scoreDolphins >= minimalScore){
+//     console.log("Dolphins win the trophy");
+// } else if (scoreDolphins < scoreKoalas && scoreKoalas >= minimalScore){
+//     console.log("Koalas win the trophy");
+// } else if (scoreDolphins === scoreKoalas && scoreKoalas >= minimalScore && scoreDolphins >= minimalScore ){
+//     console.log("Both win the trophy");
+// } else {
+//     console.log("No team wins the trophy.");
+// }
 
-if(scoreDolphins > scoreKoalas && scoreDolphins >= minimalScore){
-    console.log("Dolphins win the trophy");
-} else if (scoreDolphins < scoreKoalas && scoreKoalas >= minimalScore){
-    console.log("Koalas win the trophy");
-} else if (scoreDolphins === scoreKoalas && scoreKoalas >= minimalScore && scoreDolphins >= minimalScore ){
-    console.log("Both win the trophy");
-} else {
-    console.log("No team wins the trophy.");
-}
+//TASK #4
+

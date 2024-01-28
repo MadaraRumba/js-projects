@@ -153,3 +153,261 @@ console.log(friends.indexOf('Steven'));
 console.log(friends.includes('Steven'));
 console.log(friends.includes('Bob'));
 */
+
+
+///////////////////////////////////   OBJECTS    ////////////////////////////////////////
+/*
+const jonasArrat = [
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven']
+];
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+
+*/
+/*
+// DOT VS. BRACKET NOTATION
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+
+ */
+/*
+console.log(jonas);
+
+console.log(jonas.lastName);
+console.log(jonas['lastName']);
+
+const nameKey = 'Name';
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends.');
+
+console.log(interestedIn);
+console.log(jonas[interestedIn]);
+
+if (jonas[interestedIn]) {
+    console.log(jonas[interestedIn]);
+} else {
+    console.log('Wrong request! Choose between firstName, lastName, age, job and friends.');
+}
+
+
+//adding properties to an object
+
+jonas.location = 'Portugal';
+jonas['twitter'] = '@jonasschmedtman';
+
+console.log(jonas);
+
+ */
+
+// Challenge
+//'Jonas has 3 friends, and his best friend is Michael.'
+
+// console.log(`${jonas.firstName} has ${jonas.friends.length} friends and his best friend is ${jonas.friends[0]}.`);
+
+
+///////////////////////////////////////////////////////// OBJ METHODS
+/*
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    calcAge: function (birthYear) {
+        return 2037 - birthYear;
+    }
+};
+console.log(jonas.calcAge(1991)); // dot notation
+console.log(jonas['calcAge'](1991)); //brecket notation
+
+*/
+
+///////////////////////////////////////////////////// THIS keyword
+
+/*
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    calcAge: function () {
+        console.log(this);
+        return 2037 - this.birthYear;
+    }
+};
+console.log(jonas.calcAge());
+//with 'this' keyword there is no need passing in arguments when calling a function
+*/
+
+/*
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    }
+};
+console.log(jonas.calcAge()); // calculating the age once
+console.log(jonas.age); // storing it in a variable and retrieving it
+ */
+
+/* Challenge
+ Write a method getSummary, what would summarise data from jonas object.
+'Jonas is a 46-year old teacher and has a/no driver's license'
+ */
+
+/*
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: false,
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job} and has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+    }
+};
+console.log(jonas.getSummary());
+*/
+
+////////////////////////////////////////////////   LOOPS
+/*
+for (let rep = 1; rep <=10; rep++){
+    console.log(`Lifting weights repetition ${rep}`);
+}
+ */
+
+//////////////////////////// LOOPING ARRAYS, CONTINUE & BREAK
+/*
+const jonas = [
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+const types = [];
+
+// console.log(jonas[0]);
+// console.log(jonas[1]);
+// console.log(jonas[2]);
+//...
+// console.log(jonas[5]); - does not exist
+
+/*
+for (let i = 0; i < jonas.length; i++) {
+    console.log(jonas[i], typeof jonas[i]); // reading from jonas array
+
+    // types[i] = typeof jonas[i]; // filling types array
+    types.push(typeof jonas[i]); // filling types array
+}
+console.log(types);
+
+ */
+/*
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    // 2037 - years[i];
+    ages.push(2037 - years[i]);
+}
+console.log(ages);
+ */
+
+/////////////////// continue and break
+/*
+console.log('--- only strings --- ')
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas [i] !== 'string') continue;
+    console.log(jonas[i], typeof jonas[i]);
+}
+
+console.log('--- break with number --- ')
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas [i] === 'number') break;
+    console.log(jonas[i], typeof jonas[i]);
+}
+*/
+
+////////////// LOOPING BACKWARDS AND LOOPS IN LOOPS
+/*
+const jonas = [
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+for (let i = jonas.length - 1; i >= 0; i--) {
+    console.log(i, jonas[i]);
+}
+*/
+/*
+for (let exercise = 1; exercise < 4; exercise++){
+    console.log(`------Starting exercise ${exercise}`);
+
+    for(let rep = 1; rep <6; rep++){
+        console.log(`Exercise ${exercise}: Lifting weights repetition ${rep}`);
+    }
+}
+*/
+
+////////////////////////// WHILE LOOP
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep}`);
+// }
+/*
+let rep = 1;
+while (rep <= 10) {
+    // console.log(`WHILE: Lifting weights repetition ${rep}`);
+    rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('Loop is about to end...');
+}
+
+ */

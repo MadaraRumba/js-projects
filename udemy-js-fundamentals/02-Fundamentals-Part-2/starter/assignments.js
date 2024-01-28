@@ -45,7 +45,7 @@ checkWinner(scoreDolphins, scoreKoalas);
 //         return tip;
 //     }
 // }
-
+/*
 const calcTip = function (bill) {
     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 }
@@ -66,3 +66,95 @@ const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(bills);
 console.log(tips);
 console.log(totals);
+
+ */
+
+/*
+Challenge #3
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations!
+Remember: BMI = mass / (height * height) (mass in kg and height in meters).
+Your tasks:
+1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith). Name these objects as mark and john, and their properties exactly as fullName, mass and height.
+2. Create a calcBMI method on each object to calculate the BMI (the same method on both objects. Assign the BMI value to a property, and also return it from the method.
+3. Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!".
+TEST DATA: Marks weighs 78 kg and is 1.69 m tall. John weighs 92 kg and is 1.95 m tall.
+*/
+
+/*
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = this.mass/(this.height*this.height);
+        return this.bmi;
+    }
+};
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass/(this.height*this.height);
+        return this.bmi;
+    }
+};
+
+mark.calcBMI(); // calling a method to return bmi
+john.calcBMI();
+
+console.log(mark.bmi > john.bmi ? `${mark.fullName}'s BMI (${mark.bmi.toFixed(2)}) is higher than ${john.fullName}'s (${john.bmi.toFixed(2)})!` : `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi.toFixed(2)})!`);
+*/
+
+/* Challenge #4
+1. Create an array 'bills' containing all 10 test bill values
+2. Create empty arrays for the tips and the totals ('tips' and 'totals')
+3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate
+tips and total values (bill + tip) for every bill value in the bills array. Use a for
+loop to perform the 10 calculations!
+Test data: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52
+ */
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+for (let i = 0; i < bills.length; i++) {
+    // console.log(calcTip(bills[i]));
+    tips.push(calcTip(bills[i]));
+}
+
+for (let i = 0; i < tips.length; i++) {
+    // console.log(calcTip(bills[i]) + bills[i]);
+    totals.push(calcTip(bills[i]) + bills[i]);
+}
+
+console.log(bills);
+console.log(tips);
+console.log(totals);
+
+
+// let sum = 0;
+// console.log('start');
+// for (let i = 0; i < numbers.length; i++) {
+//     sum = sum + numbers[i];
+//     console.log(`i = ${i}, number[i] = ${numbers[i]}, sum = ${sum}`);
+// }
+// const avg = sum / bills.length;
+// console.log(`Sum value = ${sum}`);
+// console.log('average = ' + avg);
+
+let calcAverage = function(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum = sum + arr[i];
+    }
+    const avg = sum / arr.length;
+    return avg;
+}
+console.log(calcAverage(totals));

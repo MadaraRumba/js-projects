@@ -138,17 +138,6 @@ console.log(bills);
 console.log(tips);
 console.log(totals);
 
-
-// let sum = 0;
-// console.log('start');
-// for (let i = 0; i < numbers.length; i++) {
-//     sum = sum + numbers[i];
-//     console.log(`i = ${i}, number[i] = ${numbers[i]}, sum = ${sum}`);
-// }
-// const avg = sum / bills.length;
-// console.log(`Sum value = ${sum}`);
-// console.log('average = ' + avg);
-
 let calcAverage = function(arr) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {

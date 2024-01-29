@@ -1,7 +1,7 @@
 'use strict';
 /*
 //JavaScript Fundamentals – Part 2
-//Coding Challenge #1
+//Coding Challenge #1  -- FUNCTIONS--
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 //Data 1
 let scoreDolphins = calcAverage (44, 23, 71 );
@@ -34,7 +34,7 @@ checkWinner(scoreDolphins, scoreKoalas);
 */
 
 
-//Coding Challenge #2
+//Coding Challenge #2  -- ARRAYS --
 
 // function calcTip(bill) {
 //     if (bill <= 300 && bill >= 50) {
@@ -70,7 +70,7 @@ console.log(totals);
  */
 
 /*
-Challenge #3
+Challenge #3 -- OBJECTS --
 Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations!
 Remember: BMI = mass / (height * height) (mass in kg and height in meters).
 Your tasks:
@@ -87,7 +87,7 @@ const mark = {
     height: 1.69,
     calcBMI: function () {
         this.bmi = this.mass/(this.height*this.height);
-        return this.bmi;
+        return this.bmi; // adds bmi to properties
     }
 };
 
@@ -115,7 +115,7 @@ tips and total values (bill + tip) for every bill value in the bills array. Use 
 loop to perform the 10 calculations!
 Test data: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52
  */
-
+/*
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 const tips = [];
 const totals = [];
@@ -126,24 +126,26 @@ const calcTip = function (bill) {
 
 for (let i = 0; i < bills.length; i++) {
     // console.log(calcTip(bills[i]));
-    tips.push(calcTip(bills[i]));
+    const tip = calcTip(bills[i])
+    tips.push(tip);
+    totals.push(tip + bills[i]);
 }
 
-for (let i = 0; i < tips.length; i++) {
-    // console.log(calcTip(bills[i]) + bills[i]);
-    totals.push(calcTip(bills[i]) + bills[i]);
-}
+console.log(bills, tips, totals);
+*/
 
-console.log(bills);
-console.log(tips);
-console.log(totals);
+/* BONUS
+Write a function 'calcAverage' which takes an array called 'arr' as
+an argument. This function calculates the average of all numbers in the given
+array
 
-let calcAverage = function(arr) {
+const calcAverage = function(arr) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {
-        sum = sum + arr[i];
+        // sum = sum + arr[i];
+        sum += arr[i];
     }
-    const avg = sum / arr.length;
-    return avg;
+    return sum / arr.length;
 }
 console.log(calcAverage(totals));
+*/

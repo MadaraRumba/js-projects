@@ -109,7 +109,9 @@ const firstName = 'Jonas';
 const jonas = [firstName, 'Doe', 2037 - 1991, 'teacher', friends];
 console.log(jonas);
 console.log(jonas.length);
+*/
 
+/*
 //Exercise
 const calcAge = function (birthYear){
     return 2037 - birthYear;
@@ -126,15 +128,16 @@ console.log(age1, age2, age3);
 const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
 console.log(ages);
 */
+
 /*
 //ARRAY METHODS
 const friends = ['Michael', 'Steven', 'Peter'];
 
-// add
-const newLenght = friends.push('Jay');
+// adds an element to the end of an array
+friends.push('Jay');
 
 console.log(friends);
-console.log(newLenght);
+console.log(newLength);
 
 friends.unshift('John');
 console.log(friends);
@@ -304,11 +307,9 @@ console.log(jonas.getSummary());
 */
 
 ////////////////////////////////////////////////   LOOPS
-/*
-for (let rep = 1; rep <=10; rep++){
-    console.log(`Lifting weights repetition ${rep}`);
-}
- */
+
+//
+
 
 //////////////////////////// LOOPING ARRAYS, CONTINUE & BREAK
 /*

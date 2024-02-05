@@ -314,42 +314,70 @@ console.log(array[0], array[1]);
 
 
 /*
-Task #10.2
-Implement method that accepts three number arguments and returns the average of those three numbers.
- */
-/*
+// Task #10.2
+// Implement method that accepts three number arguments and returns the average of those three numbers.
+
 function isNumber(number) {
     let input = parseInt(number);
     return !isNaN(input);
 }
 
-let array = ['number1', 'number2']
+let num1;
+let num2;
+let num3;
 
 do {
-    array[0] = prompt('Please enter a number');
-    array[1] = prompt('Please enter a smaller number that the first one');
-    if (isNumber(array[0]) && isNumber(array[1])) {
+    num1 = prompt('Please enter a number');
+    num2 = prompt('Please enter another number');
+    num3 = prompt('Just one more');
+    if (isNumber(num1) && isNumber(num2) && isNumber(num3)) {
         break;
     } else {
-        alert('Please make sure that both inputs are numbers and try again');
+        alert('Please make sure that all inputs are numbers and try again');
     }
 } while (true);
 
-function isGreater(input1, input2) {
-    if (input1 > input2) {
-        return true;
-    } else {
-        return false;
-    }
+num1 = parseInt(num1);
+num2 = parseInt(num2);
+num3 = parseInt(num3);
+
+function getAverage(input1, input2, input3) {
+    return (input1 + input2 + input3) / 3;
 }
 
-console.log(isGreater(array[0], array[1]));
+console.log(getAverage(num1, num2, num3));
 */
 
 /*
-Task #10.3
-Implement method that accepts two numbers and returns true (boolean data type) if first argument is
-greater than second or false if the first argument is equal or less than second
+// Task #10.3
+// Implement method that accepts two numbers and returns true (boolean data type) if first argument is greater than second or false if the first argument is equal or less than second
+
+function isNumber(number) {
+    let input = parseInt(number);
+    return !isNaN(input);
+}
+
+let num1;
+let num2;
+
+do {
+    num1 = prompt('Please enter a number');
+    num2 = prompt('Please enter a smaller number');
+    if (isNumber(num1) && isNumber(num2)) {
+        break;
+    } else {
+        alert('Both inputs has to be numbers! Please try again.');
+    }
+} while (true);
+
+num1 = parseInt(num1);
+num2 = parseInt(num2);
+
+function isFirstNumberGreater(input1, input2) {
+  return input1 > input2 ? 'true' : 'false';
+}
+
+console.log(isFirstNumberGreater(num1, num2));
+
+let firstIsGreater = isFirstNumberGreater(num1, num2);
 */
-
-

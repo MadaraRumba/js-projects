@@ -188,6 +188,7 @@ const calcAverage = function(arr){
 console.log(calcAverage(totals));
  */
 
+/*
 // Challenge - Object Methods lecture
 // Jonas is a 46 year old teacher, and he has a / no driver's licence.
 
@@ -209,5 +210,6 @@ const jonas = {
 console.log(jonas.calcAge());
 console.log(jonas.age);
 console.log(jonas.getSummary());
+*/
 
 

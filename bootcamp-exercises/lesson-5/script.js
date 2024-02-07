@@ -35,3 +35,103 @@ if (containsNumber(numbers, userInput)) {
     console.log(`Array doesn't contain Nr. ${userInput}`);
 }
 */
+
+/*
+//Task #3
+// Declare and initialize array with arbitrary whole numbers. Print out the array to user.Then write a code which creates new array with the same values, but in reverse order. Print the new array.
+
+let array = [2, 6, 77, 13, 100];
+console.log(array);
+
+console.log(array);
+array.sort(function(a, b) {
+    return b - a;
+});
+
+console.log(array);
+*/
+
+/*
+//Task #4
+//Declare and initialize array with arbitrary whole numbers. Ask user to input whole number, then search array for that number and print the index of that number.. If there is no such number in array, print "Element <n> not found in array!"
+
+let array = [2, 6, 77, 13, 100];
+console.log(array);
+
+function isNumber(value) {
+    let number = parseInt(value);
+    return !isNaN(number);
+};
+
+let input;
+
+do {
+    input = prompt('Please enter a number');
+    if (isNumber(input)) {
+        break;
+    } else {
+        alert('Make sure you entered a number and try again');
+    }
+} while (true);
+
+input = parseInt(input);
+
+function getIndex(array, input) {
+    if (array.indexOf(input) !== -1) {
+        console.log(`Index of ${input} is ${array.indexOf(input)}.`);
+    } else {
+        console.log(`Element ${input} not found in array.`)
+    }
+};
+
+getIndex(array, input);
+*/
+
+// Task #5
+//Declare and initialize array with five arbitrary whole numbers and write code that:
+// 1) calculates the sum of all elements in array
+// 2) finds the minimum and maximum value in array
+// 3) multiplies all elements in array then print out all the results (minimum, maximum value. All sum of all elements and all element multiplication result)
+// hints: create a variable and then use while loop and += operator to sum all elements. Similar approach can be used to multiply all elements (operator *=).
+// Bonus:  also find and print out the second smallest element in an array.
+
+let array = [1, 2, 3, 4, 5];
+console.log(array);
+
+
+function getSum(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum = sum + array[i];
+    }
+    return sum;
+}
+
+function getMinAndMax(arr) {
+    array.sort(function (a, b) {
+        return a - b;
+    });
+
+    return {
+        min: arr[0],
+        max: arr[arr.length - 1]
+    };
+}
+
+function getFactor(arr) {
+    let factor = 1;
+    for (let i = 0; i < arr.length; i++) {
+        factor *= arr[i];
+    }
+    return factor;
+}
+
+console.log(getSum(array), getMinAndMax(array), getFactor(array));
+
+function getSecondSmallest(arr) {
+    return {
+        secondSmallest: arr[1]
+    };
+}
+
+console.log(getSecondSmallest(array));

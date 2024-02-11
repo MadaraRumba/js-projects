@@ -37,7 +37,7 @@ if (containsNumber(numbers, userInput)) {
 */
 
 /*
-//Task #3
+//////////////////////////////////////////////////////////// Task #3
 // Declare and initialize array with arbitrary whole numbers. Print out the array to user.Then write a code which creates new array with the same values, but in reverse order. Print the new array.
 
 let array = [2, 6, 77, 13, 100];
@@ -52,7 +52,7 @@ console.log(array);
 */
 
 /*
-//Task #4
+//////////////////////////////////////////////////////////// Task #4
 //Declare and initialize array with arbitrary whole numbers. Ask user to input whole number, then search array for that number and print the index of that number.. If there is no such number in array, print "Element <n> not found in array!"
 
 let array = [2, 6, 77, 13, 100];
@@ -86,8 +86,8 @@ function getIndex(array, input) {
 
 getIndex(array, input);
 */
-
-// Task #5
+/*
+////////////////////////////////////////////////////////////  Task #5
 //Declare and initialize array with five arbitrary whole numbers and write code that:
 // 1) calculates the sum of all elements in array
 // 2) finds the minimum and maximum value in array
@@ -135,3 +135,114 @@ function getSecondSmallest(arr) {
 }
 
 console.log(getSecondSmallest(array));
+*/
+
+/*
+//////////////////////////////////////////////////////////// Task #6
+//Declare and initialize array with arbitrary letters (use char data type), print out all the values. Then ask user to input char and then search and remove this char from array (if it exists).Then print out new array or message "Char <n> is not in array."
+// Also, since arrays are fixed size and you can't remove element from them, you will have to create new array (copy of existing one), but without the element you want to remove.
+
+let array = ['A', 'B', 'C', 'D', 'E'];
+console.log(array);
+
+let input = prompt('Please enter a letter');
+
+function removeInput(array, input) {
+    if (array.indexOf(input) !== -1) {
+        array.splice(0, array.indexOf(input));
+        console.log(array);
+    } else {
+        console.log(`Element ${input} not found in array.`)
+    }
+}
+
+removeInput(array, input);
+*/
+
+/*
+//////////////////////////////////////////////////////////// Task #7
+//Ask user to input whole number and declare/initialize array of such size. Then ask user to fill array (so he enters whole number for each element in array). Then calculate average value of an array elements and print the result.
+
+let arraySize;
+
+function isNumber(value) {
+    let number = parseInt(value);
+    return !isNaN(number);
+};
+
+do {
+    arraySize = prompt('Please enter an array size');
+    if (isNumber(arraySize)) {
+        break;
+    } else {
+        alert('Make sure you entered a number and try again');
+    }
+} while (true);
+
+arraySize = parseInt(arraySize);
+
+// let input = prompt(`Enter ${arraySize} numbers separated by commas`);
+// let array = input.split(",");
+
+let input;
+let array;
+do {
+    input = prompt(`Enter ${arraySize} numbers separated by commas`);
+    array = input.split(",");
+    do {
+        if (isNumber(input)) {
+            break;
+        } else {
+            alert('Make sure you entered numbers');
+        }
+    } while (true);
+
+    if (array.length === arraySize) {
+        break;
+    } else if (array.length > arraySize) {
+        alert(`There are too many numbers, please enter ${arraySize} numbers.`);
+    } else {
+        alert(`There are numbers missing. Please enter ${arraySize} numbers.`);
+    }
+} while (true);
+
+for (let i = 0; i < arraySize; i++) {
+    array[i] = parseInt(array[i]);
+}
+console.log(array);
+
+function calcAverage(array) {
+    let sum = 0;
+    for (let i = 0; i < arraySize; i++) {
+        sum = sum + array[i];
+    }
+    return sum / arraySize;
+}
+
+console.log(`The average is ${calcAverage(array)}`);
+*/
+
+
+//////////////////////////////////////////////////////////////// Task #8
+// Write a method which accepts two int arrays as an argument and returns true if they are the same (contain the same elements and have the same size).
+
+/*
+const compareArrays = (a, b) => {
+    if (a.length !== b.length) return false;
+    else {
+        // Comparing each element of your array
+        for (var i = 0; i < a.length; i++) {
+            if (a[i] !== b[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+};
+
+
+let a = [1, 2, 3, 4, 5];
+let b = [1, 2, 3, 4]
+
+console.log(`Are arrays equal: ${compareArrays(a, b)}`);
+*/

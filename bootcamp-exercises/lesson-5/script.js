@@ -148,8 +148,9 @@ console.log(array);
 let input = prompt('Please enter a letter');
 
 function removeInput(array, input) {
-    if (array.indexOf(input) !== -1) {
-        array.splice(0, array.indexOf(input));
+    let index = array.indexOf(input);
+    if (index !== -1) {
+        array.splice(index, 1);
         console.log(array);
     } else {
         console.log(`Element ${input} not found in array.`)
@@ -159,79 +160,102 @@ function removeInput(array, input) {
 removeInput(array, input);
 */
 
-/*
+
 //////////////////////////////////////////////////////////// Task #7
 //Ask user to input whole number and declare/initialize array of such size. Then ask user to fill array (so he enters whole number for each element in array). Then calculate average value of an array elements and print the result.
 
-let arraySize;
+////////////////////////////////////////////////////// version 1
+// let array;
+// do {
+//     let input = prompt(`Enter ${arraySize} numbers separated by commas`);
+//     array = input.split(",");
+//
+//     if (array.length != arraySize) {
+//         alert(`You have to enter ${arraySize} numbers.`);
+//         continue;
+//     }
+//
+//     let isValidArray = true;
+//     for (let i = 0; i < array.length; i++) {
+//         let number = parseInt(array[i]);
+//         if (isNaN(number)) {
+//             isValidArray = false;
+//             alert(`All entered elements have to be numbers.`);
+//             break;
+//         }
+//         array[i] = number;
+//     }
+//     if (isValidArray) {
+//         break;
+//     }
+// } while (true);
+////////////////////////////////////////////////////// version 1
 
-function isNumber(value) {
-    let number = parseInt(value);
-    return !isNaN(number);
-};
-
-do {
-    arraySize = prompt('Please enter an array size');
-    if (isNumber(arraySize)) {
-        break;
-    } else {
-        alert('Make sure you entered a number and try again');
-    }
-} while (true);
-
-arraySize = parseInt(arraySize);
-
-// let input = prompt(`Enter ${arraySize} numbers separated by commas`);
-// let array = input.split(",");
-
-let input;
-let array;
-do {
-    input = prompt(`Enter ${arraySize} numbers separated by commas`);
-    array = input.split(",");
-    do {
-        if (isNumber(input)) {
+function convertToNumbers(values) {
+    let numbers = [];
+    for (let i = 0; i < values.length; i++) {
+        let number = parseInt(values[i]);
+        if (isNaN(number)) {
             break;
         } else {
-            alert('Make sure you entered numbers');
+            numbers.push(number);
+        }
+    }
+    return numbers;
+}
+
+function getRequiredNumberCount() {
+    do {
+        let requiredNumberCount = prompt('Please enter an array size');
+        requiredNumberCount = parseInt(requiredNumberCount);
+        if (!isNaN(requiredNumberCount)) {
+            return requiredNumberCount;
+        } else {
+            alert('Make sure you entered a number and try again');
         }
     } while (true);
-
-    if (array.length === arraySize) {
-        break;
-    } else if (array.length > arraySize) {
-        alert(`There are too many numbers, please enter ${arraySize} numbers.`);
-    } else {
-        alert(`There are numbers missing. Please enter ${arraySize} numbers.`);
-    }
-} while (true);
-
-for (let i = 0; i < arraySize; i++) {
-    array[i] = parseInt(array[i]);
 }
-console.log(array);
+
+function getNumbersFromUser(requiredNumberCount) {
+    do {
+        let input = prompt(`Enter ${requiredNumberCount} numbers separated by commas`);
+        let array = input.split(",");
+
+        if (array.length != requiredNumberCount) {
+            continue;
+        }
+
+        let numbers = convertToNumbers(array);
+        if (numbers.length === requiredNumberCount) {
+            return numbers;
+        } else {
+            alert(`All entered elements have to be numbers.`);
+        }
+    } while (true);
+}
 
 function calcAverage(array) {
     let sum = 0;
-    for (let i = 0; i < arraySize; i++) {
+    for (let i = 0; i < array.length; i++) {
         sum = sum + array[i];
     }
-    return sum / arraySize;
+    return sum / array.length;
 }
 
-console.log(`The average is ${calcAverage(array)}`);
-*/
+let numberCount = getRequiredNumberCount();
+let numbers = getNumbersFromUser(numberCount);
+let average = calcAverage(numbers);
+console.log(`The average is ${average}`);
 
 
+/*
 //////////////////////////////////////////////////////////////// Task #8
 // Write a method which accepts two int arrays as an argument and returns true if they are the same (contain the same elements and have the same size).
 
-/*
-const compareArrays = (a, b) => {
+function compareArrays(a, b) {
     if (a.length !== b.length) return false;
     else {
-        // Comparing each element of your array
-        for (var i = 0; i < a.length; i++) {
+        for (let i = 0; i < a.length; i++) {
             if (a[i] !== b[i]) {
                 return false;
             }
@@ -240,8 +264,7 @@ const compareArrays = (a, b) => {
     }
 };
 
-
-let a = [1, 2, 3, 4, 5];
+let a = [1, 2, 3, 4];
 let b = [1, 2, 3, 4]
 
 console.log(`Are arrays equal: ${compareArrays(a, b)}`);

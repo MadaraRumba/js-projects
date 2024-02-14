@@ -164,6 +164,7 @@ removeInput(array, input);
 //////////////////////////////////////////////////////////// Task #7
 //Ask user to input whole number and declare/initialize array of such size. Then ask user to fill array (so he enters whole number for each element in array). Then calculate average value of an array elements and print the result.
 
+
 ////////////////////////////////////////////////////// version 1
 // let array;
 // do {
@@ -189,7 +190,7 @@ removeInput(array, input);
 //         break;
 //     }
 // } while (true);
-////////////////////////////////////////////////////// version 1
+////////////////////////////////////////////////////// version 2
 
 function convertToNumbers(values) {
     let numbers = [];

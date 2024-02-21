@@ -70,3 +70,56 @@ let userInput = getNumbers();
 console.log(toThePowerOf(userInput.base, userInput.power));
 
 */
+/*
+//////////////////////////////////////////////////// Task #14
+//Implement a method "calculateAverage" which has one parameter (array of whole numbers) calculates and returns the average of all number in array. Write an example program which uses this method and prints out the result.
+//     Example of method usage:
+//         int [] numbers = {1, 2, 3};
+//         int result = calculateAverage(numbers);
+//         System.out.println(result); //prints out 2
+//     hint: To calculate the average value of all the numbers in array you will need to sum all
+//           numbers in array and divide it by the length of array.
+
+let numbers = [10, 20, 10];
+
+function calcAverage(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    return sum / array.length;
+}
+
+console.log(calcAverage(numbers));
+*/
+
+////////////////////////////////////////////////// Task #15
+//Implement a method (generateArray) which accepts whole number (int arrayLength) and creates/returns new array which is the size of "arrayLength" populate it with random, positive whole numbers. Write an example program which uses this method and prints out the result.
+//     hint: use new Random().nextInt() to generate random number, search google for more info.
+//     For example, the return value of generateArray(3) could be array which has values 2, 20, 1
+//     inside.
+
+
+function generateArray(arrayLength) {
+    let numberCount;
+
+    do {
+        numberCount = prompt('Please enter an array length')
+        numberCount = parseInt(numberCount);
+
+        if (isNaN(numberCount)) {
+            alert('Array length has to be a number')
+        } else {
+            break;
+        }
+
+    } while (true);
+
+    let randomNumbers = [];
+    for (let i = 0; i <= numberCount - 1; i++) {
+        randomNumbers.push(Math.floor(Math.random() * 100));
+    }
+    return randomNumbers;
+}
+
+console.log(generateArray(5));

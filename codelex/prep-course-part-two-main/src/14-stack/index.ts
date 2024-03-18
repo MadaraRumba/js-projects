@@ -15,11 +15,21 @@
  */
 
 class Stack {
-  push(n: number) {}
 
-  pop() {}
+    stack: number[] = []; // liekam bez keyworda un bez let un const
 
-  peek() {}
+    push(n: number) {
+        this.stack.push(n);
+    }
+
+    pop() {
+        return this.stack.pop();
+    }
+
+    peek() {
+        return this.stack[this.stack.length - 1];
+
+    }
 }
 
-export { Stack };
+export {Stack};

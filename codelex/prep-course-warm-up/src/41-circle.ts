@@ -12,17 +12,18 @@ export {};
  */
 
 function Circle(radius: number) {
-  this.radius = radius;
+    this.radius = radius;
 
-  this.area = function(radius:number):number {
-    let area:number = Math.PI * (radius **2)
-    return area;
-  };
+    this.area = function (): number {
+        let area: number = Math.PI * (this.radius ** 2);
+        console.log(this.radius, area);
+        return area;
+    };
 
-  this.perimeter = function(radius:number):number {
-    let perimeter:number = 2 * Math.PI * radius;
-    return perimeter;
-  };
+    this.perimeter = function (): number {
+        let perimeter: number = 2 * Math.PI * this.radius;
+        return perimeter;
+    };
 }
 
 const c = new Circle(3);

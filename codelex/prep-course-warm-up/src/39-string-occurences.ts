@@ -1,21 +1,14 @@
 export {};
 
-const count = (sentence:string, word: string) => {
-
+const count = (sentence: string, word: string) => {
     let array = sentence.split(' ');
-    let newArray = [];
-
-    for (let i = 0; i< array.length; i++){
-        if (array[i].toLowerCase() === word.toLowerCase()){
-            newArray.push(array[i]);
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].toLowerCase() === word.toLowerCase()) {
+            count++;
         }
     }
-
-    return newArray.length;
-
-    //or
-    // return count = sentence.split(word.loLowerCase()).length - 1;
-
+    return count;
 };
 
 console.log(count("The quick brown fox jumps over the lazy dog", "the")); // Expected output: 2

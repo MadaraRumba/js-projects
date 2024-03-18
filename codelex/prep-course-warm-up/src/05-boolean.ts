@@ -2,7 +2,7 @@ export {};
 
 let isHappy = true;
 
-const emoji = ':('
+const emoji = ':(';
 
 // if(emoji !== ':)'){
 //   isHappy =  false;
@@ -19,6 +19,6 @@ const emoji = ':('
 
 // isHappy ? console.log(`I am ${happy}`) : console.log(`I am ${notHappy}`);
 
-console.log(`I am ${isHappy ? '' : 'not' } happy`);
+console.log(`I am ${isHappy ? '' : 'not'} happy`);
 
 // Expected output: "I am happy"

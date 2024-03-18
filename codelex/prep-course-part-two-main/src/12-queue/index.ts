@@ -13,9 +13,15 @@
  */
 
 class Queue {
-  add(n: number) {}
+    queue: number[] = [];
 
-  remove() {}
+    add(n: number) { //funkcija
+        this.queue.push(n);
+    }
+
+    remove() { // funkcija
+        return this.queue.shift() //nonem pirmo elementu un atgriez iznemto
+    }
 }
 
-export { Queue };
+export {Queue};

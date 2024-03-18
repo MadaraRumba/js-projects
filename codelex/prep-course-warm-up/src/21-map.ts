@@ -1,15 +1,14 @@
 export {};
 
-function tidyUpString(str:string):string {
-  return str.trim().toLowerCase().replace("/", "");
+function tidyUpString(str: string): string {
+    return str.trim().toLowerCase().replace("/", "");
 }
 
 
 // You are allowed to edit this function
-function capitalise(str: string):string {
+function capitalise(str: string): string {
     const firstLetterUpper = str[0].toUpperCase();
-    const newWord = firstLetterUpper + str.substring(1);
-    return newWord;
+    return firstLetterUpper + str.substring(1);
 }
 
 const mentors = ["/Daniel ", "irina ", " Gordon", "ashleigh "];

@@ -13,16 +13,16 @@ export {};
  *
  * Temperature should be rounded to one decimal place: i.e., fahrenheitToCelsius(100) should return 37.8 and not 37.77777777777778.
  */
-const formatTemperature =(temperature:number) :string => {
+const formatTemperature = (temperature: number): string => {
     return temperature.toFixed(1);
 }
 
 
-const fahrenheitToCelsius = (temperature:number):string => {
-    return formatTemperature((temperature - 32) *(5/9));
+const fahrenheitToCelsius = (temperature: number): string => {
+    return formatTemperature((temperature - 32) * (5 / 9));
 }
-const celsiusToFahrenheit = (temperature:number) => {
-    return formatTemperature((temperature * (5/9) +32));
+const celsiusToFahrenheit = (temperature: number) => {
+    return formatTemperature((temperature * (5 / 9) + 32));
 }
 
 

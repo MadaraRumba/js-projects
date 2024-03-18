@@ -1,7 +1,7 @@
 export {};
 
 function getRandomNumber() {
-  return Math.floor(Math.random() * 10);
+    return Math.floor(Math.random() * 10);
 }
 
 // const result = getRandomNumber(); // call the function created above and put the result inside the variable
@@ -13,12 +13,11 @@ function getRandomNumber() {
 
 
 function printRandomNumberStopAtNine(): void {
-  let result: number;
-
-  do {
-    result = getRandomNumber();
-    console.log(result);
-  } while (result !== 9);
+    let result: number;
+    do {
+        result = getRandomNumber();
+        console.log(result);
+    } while (result !== 9);
 }
 
 printRandomNumberStopAtNine();

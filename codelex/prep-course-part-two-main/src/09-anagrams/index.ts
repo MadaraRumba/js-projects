@@ -12,6 +12,22 @@
  * anagrams('Hi there', 'Bye there') === false
  */
 
-function anagrams(stringA: string, stringB: string) {}
+function anagrams(stringA: string, stringB: string) {
 
-export { anagrams };
+    // normalize strings
+    // make an arrays
+    // check if length is the same
+    // check if the A includes B letters
+
+    const arrayA = stringA.toLowerCase().replace(/[^a-zA-Z\d\s-]/g, '').split('');
+
+    const arrayB = stringB.toLowerCase().replace(/[^a-zA-Z\d\s-]/g, '').split('');
+
+    if (arrayA.length !== arrayB.length) {
+        return false;
+    }
+
+    return arrayA.every(letter => arrayB.includes(letter));
+}
+
+export {anagrams};

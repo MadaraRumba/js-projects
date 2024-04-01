@@ -5,22 +5,33 @@
  */
 
 class HighScores {
-  scores: number[];
-  constructor(scores: number[]) {
-    this.scores = scores;
-  }
+    scores: number[];
+    sortedScores: number[];
 
-  get latest() {
-    return 0;
-  }
+    constructor(scores: number[]) {
+        this.scores = scores;
+        this.sortedScores = [];
+    }
 
-  get personalBest() {
-    return 0;
-  }
+    get latest() {
+        // return 0;
+        let index = this.scores.length - 1;
+        return this.scores[index];
+    }
 
-  get personalTopThree() {
-    return 0;
-  }
+    get personalBest() {
+        // return 0;
+        this.scores.forEach((number) => this.sortedScores.push(number));
+        this.sortedScores.sort((a, b) => b - a);
+        return this.sortedScores[0];
+    }
+
+    get personalTopThree() {
+        // return 0;
+        this.scores.forEach((number) => this.sortedScores.push(number));
+        this.sortedScores.sort((a, b) => b - a);
+        return this.sortedScores.slice(0, 3);
+    }
 }
 
-export { HighScores };
+export {HighScores};

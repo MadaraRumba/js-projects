@@ -12,7 +12,7 @@
  * q.remove(); // returns 1
  */
 
-class Queue {
+class Queue { // klase ir šablons pēc kura veidot objektus
     queue: number[] = [];
 
     add(n: number) { //funkcija

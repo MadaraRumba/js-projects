@@ -23,7 +23,7 @@ class Stack {
     }
 
     pop() {
-        return this.stack.pop();
+        return this.stack.pop(); //removes the last element from an array and returns that element
     }
 
     peek() {

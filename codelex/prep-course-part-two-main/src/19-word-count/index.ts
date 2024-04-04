@@ -10,7 +10,30 @@
  */
 
 class Words {
-  count(str: string) {}
+
+    count(str: string) {
+        // empty object that stores character frequency
+        // iterate trough string and count the frequency for each character for... of(iterates over iterable directly)
+        // increment character each time it occurs by 1
+        // return object keys and properties
+
+        const wordCount: { [key: string]: number } = {};
+        let wordArray = str
+            .toLowerCase()
+            .replace(/[\t\n\s]+/g, " ")
+            .trim()
+            .split(' ');
+
+        for (let word of wordArray) {
+            let prop = wordCount[word];
+            if (prop && typeof prop === 'number') {
+                wordCount[word] = ++prop;
+            } else {
+                wordCount[word] = 1;
+            }
+        }
+        return wordCount;
+    }
 }
 
-export { Words };
+export {Words};

@@ -35,14 +35,25 @@
  */
 
 class Matrix {
-  constructor(private matrix: string) {}
+
+  // split  \n
+  // every row is an array
+  // return n element in an array
+  constructor(private matrix: string) {
+  }
 
   get rows() {
-    return [];
+    return this.matrix.split('\n').map(row => row.split(' ').map(Number));
   }
 
   get columns() {
-    return [];
+    const rows = this.rows;
+    const columns = [];
+
+    for (let i = 0; i < rows[0].length; i++) {
+      columns.push(rows.map(row => row[i]));
+    }
+    return columns;
   }
 }
 

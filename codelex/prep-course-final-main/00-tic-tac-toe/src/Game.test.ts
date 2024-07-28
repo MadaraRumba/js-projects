@@ -52,7 +52,7 @@ describe("Tic-Tac-Toe", () => {
             ]);
 
             expect(game.getWinner()).toBe("X");
-            expect(game.isTie()).toBe(false)
+            expect(game.isTie()).toBe(false);
         });
     });
 

@@ -77,9 +77,9 @@ export class Game {
             }
         }
     }
-
     restart(): void {
         this.cells = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
         this.turn = 'X';
     }
+
 }

@@ -10,7 +10,6 @@ function draw(numberOfStars: number) {
     for (let i = 0; i < numberOfStars; i++) {
         console.log(triangle += '*');
     }
-    console.log('');
 
 }
 

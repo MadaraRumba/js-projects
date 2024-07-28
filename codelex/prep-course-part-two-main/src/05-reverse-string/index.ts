@@ -13,9 +13,8 @@
 function reverse(str: string): string {
     let reverseString = "";
     for (let i = str.length - 1; i >= 0; i--) {
-        console.log(str.charAt(i));
-        reverseString += str.charAt(i);
-
+        console.log(str[i]);
+        reverseString += str[i];
     }
     console.log('---------------')
     return reverseString;

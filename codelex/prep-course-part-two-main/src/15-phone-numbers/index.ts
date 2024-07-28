@@ -28,6 +28,7 @@ class PhoneNumber {
     // set conditions and if ok - add to empty variable
 
     private phoneNumber: string;
+    
 
     constructor(phoneNumber: string) {
         this.phoneNumber = phoneNumber;

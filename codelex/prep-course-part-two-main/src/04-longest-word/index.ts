@@ -12,7 +12,7 @@
  * longestWord("fun&!! time") === "time"
  */
 
-function longestWord(sen: string) {
+function longestWord(sentence: string) {
     // empty string for the longest word
     // replace any other tha alphabetical characters with ''
     // split in words .split(' ');
@@ -20,17 +20,16 @@ function longestWord(sen: string) {
     // check the length and if it is longer then the previous - re - declare as the longest
 
     let longestWord = '';
-    const words = sen.replace(/[^a-zA-Z\d\s-]/g, '').split(/[ -]/g);
+    const words = sentence
+        .replace(/[^a-zA-Z\d\s-]/g, '')
+        .split(' ');
 
-    words.forEach(function (words) {
-        if (words.length > longestWord.length) {
-            longestWord = words;
+    words.forEach(word => {
+        if (word.length > longestWord.length) {
+            longestWord = word;
         }
-    })
-
+    });
     return longestWord;
-
 }
-
 
 export {longestWord};

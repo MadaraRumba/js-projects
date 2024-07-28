@@ -15,19 +15,16 @@ function validate(n: number) {
     // get the length of the number (digits)
     // declare a sum variable and assign 0
     // loop through each digit and calculate the sum of each digit raised to the power of the number of digits
-
     let number = n;
-    const digits = n.toString().length;
     let sum = 0;
-
+    const digits = n.toString().length;
+    
     while (number > 0) {
         let lastNumber = number % 10; //the last digit
         sum += lastNumber ** digits;
         number = Math.floor(number / 10); // remove the last digit
     }
-
     return sum === n;
-
 }
 
 export {validate};

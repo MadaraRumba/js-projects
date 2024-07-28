@@ -2,7 +2,7 @@
  * Steps
  *
  * Write a function that accepts a positive number N.
- * The function should prints a step shape
+ * The function should print a step shape
  * with N levels using the '#' character.
  *
  * Examples:
@@ -19,6 +19,13 @@
  *            '####'
  */
 
-function steps(n: number) {}
+function steps(n: number) {
+    for (let i = 0; i < n; i++) {
+        let spaces = ' '.repeat(n - i - 1);
+        let hash = '#'.repeat(i + 1);
 
-export { steps };
+        console.log(hash + spaces);
+    }
+}
+
+export {steps};

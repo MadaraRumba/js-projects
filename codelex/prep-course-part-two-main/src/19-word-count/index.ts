@@ -12,9 +12,9 @@
 class Words {
 
     count(str: string) {
-        // empty object that stores character frequency
-        // iterate trough string and count the frequency for each character for... of(iterates over iterable directly)
-        // increment character each time it occurs by 1
+        // empty object that stores string frequency
+        // iterate trough string and count the frequency for each string for... of(iterates over iterable directly)
+        // increment string count each time it occurs by 1
         // return object keys and properties
 
         const wordCount: { [key: string]: number } = {};

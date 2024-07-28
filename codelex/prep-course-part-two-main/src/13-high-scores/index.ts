@@ -10,7 +10,8 @@ class HighScores {
 
     constructor(scores: number[]) {
         this.scores = scores;
-        this.sortedScores = [];
+        this.sortedScores = Array.from(scores);
+        this.sortedScores.sort((a, b) => b - a);
     }
 
     get latest() {
@@ -21,15 +22,11 @@ class HighScores {
 
     get personalBest() {
         // return 0;
-        this.scores.forEach((number) => this.sortedScores.push(number));
-        this.sortedScores.sort((a, b) => b - a);
         return this.sortedScores[0];
     }
 
     get personalTopThree() {
         // return 0;
-        this.scores.forEach((number) => this.sortedScores.push(number));
-        this.sortedScores.sort((a, b) => b - a);
         return this.sortedScores.slice(0, 3);
     }
 }

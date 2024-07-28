@@ -32,14 +32,13 @@ function steps(n: number) {
 
     do {
         if (n === 1) {
-            return stepCount = 0;
+            return stepCount;
         } else if (n % 2 === 0) {
             n = n / 2;
         } else {
             n = 3 * n + 1;
         }
         stepCount++;
-
     } while (n !== 1)
 
     return stepCount;
